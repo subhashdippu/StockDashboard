@@ -24,9 +24,6 @@ ChartJS.register(
   annotationPlugin
 );
 
-const NASA_NEO_API_URL = "https://api.nasa.gov/neo/rest/v1/feed";
-const API_KEY = process.env.NASA_API_KEY;
-
 const NasaAreaLineChart = () => {
   const [chartData, setChartData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -34,21 +31,21 @@ const NasaAreaLineChart = () => {
   useEffect(() => {
     const fetchNasaData = async () => {
       try {
-        const response = await fetch(
-          `${NASA_NEO_API_URL}?start_date=2024-08-01&end_date=2024-08-07&api_key=${API_KEY}`
+        const numPoints = 100;
+        const dates = Array.from(
+          { length: numPoints },
+          (_, i) => `2024-08-${String(i + 1).padStart(2, "0")}`
         );
-        const data = await response.json();
-
-        const dates = Object.keys(data.near_earth_objects);
-        const values = dates.map(
-          (date) => data.near_earth_objects[date].length
+        const values = Array.from(
+          { length: numPoints },
+          () => Math.random() * 100
         );
 
         setChartData({
           labels: dates,
           datasets: [
             {
-              label: "NEOs Detected",
+              label: "Example Dataset",
               data: values,
               fill: true,
               borderColor: "rgba(75, 192, 192, 1)",
@@ -66,8 +63,8 @@ const NasaAreaLineChart = () => {
                   0,
                   chartArea.top
                 );
-                gradient.addColorStop(0, "#E8E7FF");
-                gradient.addColorStop(1, "#FFFFFF");
+                gradient.addColorStop(1, "#E8E7FF");
+                gradient.addColorStop(0, "#FFFFFF");
 
                 return gradient;
               },
@@ -120,37 +117,66 @@ const NasaAreaLineChart = () => {
                 },
                 line1: {
                   type: "line",
-                  xMin: 1.5,
-                  xMax: 1.5,
+                  xMin: 16.5,
+                  xMax: 16.5,
                   borderColor: "#E2E4E7",
                   borderWidth: 1,
                 },
                 line2: {
                   type: "line",
-                  xMin: 3,
-                  xMax: 3,
+                  xMin: 33,
+                  xMax: 33,
+                  borderColor: "#E2E4E7",
+                  borderWidth: 1,
+                },
+                line3: {
+                  type: "line",
+                  xMin: 49.5,
+                  xMax: 49.5,
+                  borderColor: "#E2E4E7",
+                  borderWidth: 1,
+                },
+                line4: {
+                  type: "line",
+                  xMin: 66,
+                  xMax: 66,
+                  borderColor: "#E2E4E7",
+                  borderWidth: 1,
+                },
+                line5: {
+                  type: "line",
+                  xMin: 82.5,
+                  xMax: 82.5,
                   borderColor: "#E2E4E7",
                   borderWidth: 1,
                 },
                 lineEnd: {
                   type: "line",
-                  xMin: 6,
-                  xMax: 6,
+                  xMin: 99,
+                  xMax: 99,
                   borderColor: "#E2E4E7",
                   borderWidth: 1,
+                },
+                bottomLine: {
+                  type: "line",
+                  yMin: 0,
+                  yMax: 0,
+                  borderColor: "#E2E4E7",
+                  borderWidth: 1,
+                  borderDash: [5, 5],
                 },
               },
             },
           },
           scales: {
             x: {
-              display: true,
+              display: false,
               grid: {
                 display: false,
               },
             },
             y: {
-              display: true,
+              display: false,
               grid: {
                 display: false,
               },
@@ -158,12 +184,7 @@ const NasaAreaLineChart = () => {
           },
         }}
       />
-      <div
-        className="value-box"
-        style={{ position: "absolute", top: "10px", right: "10px" }}
-      >
-        Average: {averageValue.toFixed(2)}
-      </div>
+      <div className="value-box">Average: {averageValue.toFixed(2)}</div>
     </div>
   );
 };

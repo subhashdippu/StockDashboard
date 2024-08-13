@@ -1,4 +1,5 @@
 .summary {
+  width: 750px;
   height: 343px;
   position: absolute;
   top: 386px;
@@ -6,6 +7,5 @@
   opacity: 1;
   overflow: visible;
   box-sizing: content-box;
-  width: 90%;
   line-height: 1.5;
 }
