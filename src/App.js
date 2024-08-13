@@ -8,7 +8,7 @@ import Setting from "./components/Settings";
 import AnalysisChart from "./charts/AnalysisChart";
 import Statistic from "./charts/StatisticsChart";
 import Summary from "./components/Summary";
-
+import PeriodSelector from "./charts/PeriodSelector";
 function App() {
   return (
     <div>
@@ -69,6 +69,15 @@ function App() {
             element={
               <>
                 <Setting />
+              </>
+            }
+          />
+          <Route
+            path="/periodselector"
+            exact
+            element={
+              <>
+                <PeriodSelector />
               </>
             }
           />
