@@ -1,0 +1,45 @@
+.box {
+  width: 326px;
+  height: 122px;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  display: flex;
+}
+
+.box h1 {
+  width: 269px;
+  height: 89px;
+  font-family: "Circular Std";
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 88.56px;
+  text-align: left;
+  background: none;
+  color: #1A243A;
+  margin: -15px -2px;
+}
+
+.box span {
+  width: 49px;
+  height: 30px;
+  font-family: "Circular Std";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30.36px;
+  text-align: center;
+  color: #BDBEBF;
+  margin-left: 10px;
+}
+
+.box p {
+  width: 141px;
+  height: 23px;
+  font-family: "Circular Std";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.77px;
+  color: #67BF6B;
+  position: absolute;
+  top: 67px;
+}

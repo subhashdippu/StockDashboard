@@ -1,0 +1,31 @@
+.chart-container {
+  width: 839px;
+  height: 343px;
+  position: absolute; 
+  top: 386px;
+  left: 60px;
+  border-radius: 5px 0px 0px 0px;
+  opacity: 1;
+  overflow: visible; 
+}
+
+.chart-container canvas {
+  box-sizing: border-box;
+  display: block;
+  height: 343px !important;
+  width: 750px !important;
+  position: sticky;
+  top: 388px;
+}
+
+.value-box {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #8884d8;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  white-space: nowrap; 
+}

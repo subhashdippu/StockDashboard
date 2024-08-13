@@ -1,0 +1,51 @@
+.navbar {
+  background: transparent;
+  position: absolute;
+  top: 222px;
+  width: 1000px;
+  height: 43px;
+}
+
+.categories {
+  width: 361px;
+  height: 33px;
+  top: 222px;
+  left: 60px; 
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  align-items: center;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .categories a {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar .categories a:hover {
+  color: #4B40EE; 
+}
+
+.navbar .categories a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #4B40EE; 
+  transition: width 0.3s ease-in-out;
+}
+
